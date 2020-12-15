@@ -50,8 +50,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: jacoco-reports
-          path: reports/jacoco
-  
+          path: reports/jacoco  
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
