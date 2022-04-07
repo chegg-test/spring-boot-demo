@@ -1,4 +1,4 @@
-FROM amazoncorretto:11 as buildImage
+FROM amazoncorretto:18 as buildImage
 
 ARG APP_NAME=spring-boot-demo
 
@@ -15,7 +15,7 @@ WORKDIR /appcode/$APP_NAME
 
 RUN ./gradlew --no-daemon clean bootDistZip && cd build/distributions && /usr/bin/unzip -o $APP_NAME-boot.zip
 
-FROM amazoncorretto:11 as runImage
+FROM amazoncorretto:18 as runImage
 
 RUN yum install -y wget
 
